@@ -16,3 +16,8 @@
   user-select: none;
   font-size: 30px;
 }
+
+.content {
+  background-color: aliceblue;
+  height: 80vh;
+}
