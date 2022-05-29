@@ -1,24 +1,20 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import { Container } from 'react-bootstrap';
+import NavComp from './components/NavComp';
+import morning from './morning.jpg';
 import './App.css';
 
 function App() {
+  const [mode, setMode] = useState(true)
+
+  const backgroundStyle = {
+    backgroundImage: `url(${morning})`,
+    backgroundColor: `#FFCC8F`
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className='App' fluid style={backgroundStyle}>
+      <NavComp mode={mode} setMode={setMode}/>
+    </Container>
   );
 }
 
