@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Nav, Button } from 'react-bootstrap';
+import { ModeContext } from '../Context/ModeContext';
 import '../App.css';
 
-export default function NavComp(props) {
-    const {mode, setMode} = props;
+export default function NavComp() {
+    const {mode, setMode} = useContext(ModeContext);
+    
     return(
         <Nav className='justify-content-end'>
             {

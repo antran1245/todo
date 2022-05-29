@@ -21,3 +21,7 @@
   background-color: aliceblue;
   height: 80vh;
 }
+.listing {
+  border-radius: 10px;
+  text-align: center;
+}
