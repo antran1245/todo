@@ -23,3 +23,9 @@ Allow user to create a todo list.
 - Dark and Light mode by click of button (<span>&#9728;</span> / <span>&#x1F319;</span>)
     - Change in background image by mode.
 - Remove button to remove item from list.
+
+## Screenshots
+
+![morning](morning_screenshot.png)
+
+![night](night_screenshot.png)
