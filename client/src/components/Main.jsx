@@ -1,11 +1,20 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Add from './Add';
 import List from "./List";
+import axios from 'axios';
 import '../App.css';
 
 export default function Main() {
     const [list, setListing] = useState([])
+
+    useEffect(() => {
+        const handleAxios = async() => {
+            let resp = await axios.get('http://localhost:8000/api/items')
+            setListing(resp.data)
+        }
+        handleAxios()
+    }, [])
 
     return(
         <Container className="mt-md-5 mt-3">

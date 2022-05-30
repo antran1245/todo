@@ -1,18 +1,19 @@
 import { Row, Col, Form, Button } from "react-bootstrap";
 import { useState } from 'react';
+import axios from 'axios';
 import '../App.css';
 
 export default function Main(props) {
     const {list, setListing} = props;
-    const [item, setItem] = useState(null);
+    const [content, setContent] = useState(null);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
-        if(item) {
-            setListing([...list, item])
-            // alert(item)
+        if(content) {
+            const resp = await axios.post('http://localhost:8000/api/items/post', {content})
+            setListing([...list, resp.data])
             e.target.reset();
-            setItem(null)
+            setContent(null)
         } else {
             alert("Blank Entry")
         }
@@ -20,10 +21,10 @@ export default function Main(props) {
     return(
         <Form onSubmit={handleSubmit}>
             <Form.Group as={Row}>
-                <Col xs={12} lg={10}>
-                    <Form.Control type="text" onChange={(e) => setItem(e.target.value)}/>
+                <Col xs={12} sm={10} lg={10}>
+                    <Form.Control type="text" onChange={(e) => setContent(e.target.value)}/>
                 </Col>
-                <Col xs={12} lg={2} className="mt-2 mt-lg-0">
+                <Col xs={12} sm={2} lg={2} className="mt-2 mt-sm-0">
                     <Button className="w-100" type="submit">Add</Button>
                 </Col>
             </Form.Group>

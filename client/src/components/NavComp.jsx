@@ -1,5 +1,5 @@
-import { useContext, useState } from 'react';
-import { Nav, Button } from 'react-bootstrap';
+import { useContext } from 'react';
+import { Nav } from 'react-bootstrap';
 import { ModeContext } from '../Context/ModeContext';
 import '../App.css';
 
