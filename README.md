@@ -2,6 +2,10 @@
 
 Allow user to create a todo list.
 
+## Run Application
+- npm start
+- yarn start
+
 ## Technologies
 
 **Languages**
