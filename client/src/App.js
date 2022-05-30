@@ -19,6 +19,13 @@ function App() {
       <Container className='App' fluid style={backgroundStyle}>
         <NavComp />
         <Main />
+        <div id='attribution'>
+          {
+            mode?
+            <p><a href='https://www.pexels.com/photo/mountains-and-trees-during-sunrise-4448846/'>Image provided by: Vlada Karpovich</a></p>:
+            <p><a href='https://www.pexels.com/photo/blue-and-white-sky-with-stars-4737484/'>Image provided by: Rafael Cerqueira</a></p>
+          }
+        </div>
       </Container>
     </ModeContext.Provider>
   );
